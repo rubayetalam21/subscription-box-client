@@ -25,15 +25,15 @@ const router = createBrowserRouter([
                 path: 'allGroup',
                 element: <AllGroup></AllGroup>,
             },
+            {
+                path: 'myGroup',
+                element: <PrivateRoute><MyGroup></MyGroup></PrivateRoute>,
+            },
+            {
+                path: 'createGroup',
+                element: <PrivateRoute><CreateGroup></CreateGroup></PrivateRoute>,
+            },
         ],
-    },
-    {
-        path: 'myGroup',
-        element: <PrivateRoute><MyGroup></MyGroup></PrivateRoute>,
-    },
-    {
-        path: 'createGroup',
-        element: <PrivateRoute><CreateGroup></CreateGroup></PrivateRoute>,
     },
     {
         path: '/auth',
