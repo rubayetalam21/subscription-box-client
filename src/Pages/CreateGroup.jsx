@@ -22,24 +22,53 @@ const CreateGroup = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         // Send formData + user info to backend here
+
+
+        const form = e.target;
+        const formData = new FormData(form);
+        const newHobby = Object.fromEntries(formData.entries())
+        console.log(newHobby);
+
+        fetch('http://localhost:3000/hobbies', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newHobby)
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    console.log('added successfully.')
+
+                    Swal.fire({
+                        title: "Hobby added successfully!",
+                        icon: "success",
+                        draggable: true
+                    });
+
+                    // Optionally reset the form
+                    setFormData({
+                        title: '',
+                        category: '',
+                        description: '',
+                        location: '',
+                        maxMembers: '',
+                        startDate: '',
+                        imageUrl: '',
+                    });
+                }
+            })
+
         console.log({ ...formData, userName: user?.displayName, userEmail: user?.email });
 
-        Swal.fire({
-            icon: 'success',
-            title: 'Group Created',
-            text: 'Your group has been successfully created!',
-        });
+        // Swal.fire({
+        //     icon: 'success',
+        //     title: 'Group Created',
+        //     text: 'Your group has been successfully created!',
+        // });
 
-        // Optionally reset the form
-        setFormData({
-            title: '',
-            category: '',
-            description: '',
-            location: '',
-            maxMembers: '',
-            startDate: '',
-            imageUrl: '',
-        });
+
     };
 
     return (
