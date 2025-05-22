@@ -37,7 +37,7 @@ const router = createBrowserRouter([
             },
             {
                 path: 'updateGroup/:id',
-                // loader: ({ params }) => fetch(`http://localhost:3000/hobbies/${params.id}`),
+                // loader: ({ params }) => fetch(`https://b11a10-server-side-rubayetalam21.vercel.app/hobbies/${params.id}`),
                 element: <PrivateRoute><UpdateGroup></UpdateGroup></PrivateRoute>
             },
             {

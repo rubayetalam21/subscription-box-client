@@ -9,7 +9,7 @@ const GroupDetails = () => {
     const [group, setGroup] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/hobbies/user/${id}`)
+        fetch(`https://b11a10-server-side-rubayetalam21.vercel.app/hobbies/user/${id}`)
             .then(res => res.json())
             .then(data => setGroup(data))
             .catch(err => console.error('Failed to fetch group:', err));

@@ -11,7 +11,7 @@ const MyGroups = () => {
     // Load user's groups
     useEffect(() => {
         if (user?.email) {
-            fetch(`http://localhost:3000/hobbies/${user.email}`)
+            fetch(`https://b11a10-server-side-rubayetalam21.vercel.app/hobbies/${user.email}`)
                 .then(res => res.json())
                 .then(data => setGroups(data))
                 .catch(err => console.error('Error loading groups:', err));
@@ -30,7 +30,7 @@ const MyGroups = () => {
             confirmButtonText: 'Yes, delete it!'
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:3000/hobbies/${id}`, {
+                fetch(`https://b11a10-server-side-rubayetalam21.vercel.app/hobbies/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())

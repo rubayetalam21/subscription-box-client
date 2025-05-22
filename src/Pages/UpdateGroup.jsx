@@ -23,7 +23,7 @@ const UpdateGroup = () => {
     // console.log(title);
     // // Load existing group data
     // useEffect(() => {
-    //     fetch(`http://localhost:3000/hobbies/${id}`)
+    //     fetch(`https://b11a10-server-side-rubayetalam21.vercel.app/hobbies/${id}`)
     //         .then(res => res.json())
     //         .then(data => setFormData(data))
     //         .catch(err => console.error('Failed to fetch group data:', err));
@@ -31,7 +31,7 @@ const UpdateGroup = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:3000/hobbies/user/${id}`)
+        fetch(`https://b11a10-server-side-rubayetalam21.vercel.app/hobbies/user/${id}`)
             .then(res => {
                 if (!res.ok) {
                     throw new Error('Network response was not ok');
@@ -69,7 +69,7 @@ const UpdateGroup = () => {
             userEmail: user?.email,
         };
 
-        fetch(`http://localhost:3000/hobbies/${id}`, {
+        fetch(`https://b11a10-server-side-rubayetalam21.vercel.app/hobbies/${id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

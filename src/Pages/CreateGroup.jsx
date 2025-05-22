@@ -35,7 +35,7 @@ const CreateGroup = () => {
     
         console.log(newHobby);
 
-        fetch('http://localhost:3000/hobbies', {
+        fetch('https://b11a10-server-side-rubayetalam21.vercel.app/hobbies', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

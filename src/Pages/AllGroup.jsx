@@ -10,7 +10,7 @@ const AllGroup = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
-        fetch('http://localhost:3000/hobbies')
+        fetch('https://b11a10-server-side-rubayetalam21.vercel.app/hobbies')
             .then(res => res.json())
             .then(data => {
                 setGroups(data);
