@@ -1,12 +1,28 @@
-# React + Vite
+# Hobby Group Platform - Client Side
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **client-side** React application for the **Hobby Group Platform**, where users can explore, join, and manage hobby-based community groups. It connects to a RESTful API server deployed on Vercel.
 
-Currently, two official plugins are available:
+Project Name: Hobby Hub
+Live Site Link: https://hobbyhub-f0f86.web.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🚀 Features
 
-## Expanding the ESLint configuration
+- 🔍 Browse all hobby groups
+- 🌟 Featured section for ongoing groups (limited to 6)
+- 🧠 Tooltip previews with group metadata
+- ⏳ Loading spinner while fetching data
+- 📦 Responsive UI using Tailwind CSS
+- 🛠️ React Router for dynamic routing
+- 🌐 Fetches data from a deployed Vercel server
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🧰 Tech Stack
+
+- **React 19**
+- **Vite**
+- **Tailwind CSS**
+- **React Router DOM**
+- **React Tooltip**
+- **REST API (Hosted on Vercel)**
+
