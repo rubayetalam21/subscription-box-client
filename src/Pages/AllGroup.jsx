@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router';
 
 const AllGroup = () => {
     const [groups, setGroups] = useState([]);
@@ -42,6 +43,12 @@ const AllGroup = () => {
                             <p>Created by: {group.userName}</p>
                             <p>Email: {group.userEmail}</p>
                         </div>
+
+                        <Link to={`/groupDetails/${group._id}`} className="mt-auto">
+                            <button className="btn bg-teal-500 text-white w-full mt-4">
+                                See More
+                            </button>
+                        </Link>
                     </div>
                 ))}
             </div>
