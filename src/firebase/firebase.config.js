@@ -12,14 +12,6 @@ const firebaseConfig = {
   storageBucket: import.meta.env.VITE_storageBucket,
   messagingSenderId: import.meta.env.VITE_messagingSenderId,
   appId: import.meta.env.VITE_appId 
-
-
-  // apiKey: "AIzaSyBZu0FL4fv_C3R7e5St3488f14-XzkRQRQ",
-  // authDomain: "hobbyhub-f0f86.firebaseapp.com",
-  // projectId: "hobbyhub-f0f86",
-  // storageBucket: "hobbyhub-f0f86.firebasestorage.app",
-  // messagingSenderId: "183097036846",
-  // appId: "1:183097036846:web:08add862d21b30ab700fbf"
 };
 
 // Initialize Firebase
