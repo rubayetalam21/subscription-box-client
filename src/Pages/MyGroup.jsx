@@ -1,10 +1,12 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { useNavigate } from 'react-router';
 
 const MyGroups = () => {
     const { user } = useContext(AuthContext);
     const [groups, setGroups] = useState([]);
+    const navigate = useNavigate();
 
     // Load user's groups
     useEffect(() => {
@@ -69,7 +71,7 @@ const MyGroups = () => {
                                     <td>{group.startDate}</td>
                                     <td>{group.maxMembers}</td>
                                     <td>
-                                        <button className="btn btn-xs btn-warning mr-2">Update</button>
+                                        <button className="btn btn-xs btn-warning mr-2" onClick={() => navigate(`/updateGroup/${group._id}`)} >Update</button>
                                         <button
                                             className="btn btn-xs btn-error"
                                             onClick={() => handleDelete(group._id)}

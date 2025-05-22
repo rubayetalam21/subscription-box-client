@@ -10,6 +10,8 @@ import Login from '../Pages/Login';
 import Register from '../Pages/Register';
 import ForgetPassword from '../Pages/ForgetPassword';
 import PrivateRoute from '../Provider/PrivateRoute';
+import UpdateGroup from '../Pages/UpdateGroup';
+import GroupDetails from '../Pages/GroupDetails';
 
 
 const router = createBrowserRouter([
@@ -33,6 +35,15 @@ const router = createBrowserRouter([
                 path: 'createGroup',
                 element: <PrivateRoute><CreateGroup></CreateGroup></PrivateRoute>,
             },
+            {
+                path: 'updateGroup/:id',
+                // loader: ({ params }) => fetch(`http://localhost:3000/hobbies/${params.id}`),
+                element: <PrivateRoute><UpdateGroup></UpdateGroup></PrivateRoute>
+            },
+            {
+                path: 'groupDetails/:id',
+                element: <PrivateRoute><GroupDetails></GroupDetails></PrivateRoute>
+            }
         ],
     },
     {

@@ -1,4 +1,5 @@
 import React from 'react';
+import errorImg from '../assets/error_page.png';
 
 const ErrorPage = () => {
     return (
@@ -10,7 +11,7 @@ const ErrorPage = () => {
                 <p>404 ! Page Not Found</p>
             </div>
             <div className="text-center my-4">
-                <button onClick={handleGoHome} className='btn btn-primary px-10 bg-blue-800 text-white'>
+                <button className='btn btn-primary px-10 bg-blue-800 text-white'>
                     Home
                 </button>
             </div>
