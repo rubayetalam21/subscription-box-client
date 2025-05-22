@@ -3,6 +3,7 @@ import React from 'react';
 import { Fade, Slide } from 'react-awesome-reveal';
 import Slider from '../components/Slider';
 import AllGroup from './AllGroup';
+import FeaturedGroups from './FeaturedGroups';
 
 const Home = () => {
     return (
@@ -14,7 +15,7 @@ const Home = () => {
             </div>
 
             <Slide direction="up" triggerOnce>
-                <AllGroup />
+                <FeaturedGroups></FeaturedGroups>
             </Slide>
         </div>
     );

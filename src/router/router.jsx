@@ -12,6 +12,7 @@ import ForgetPassword from '../Pages/ForgetPassword';
 import PrivateRoute from '../Provider/PrivateRoute';
 import UpdateGroup from '../Pages/UpdateGroup';
 import GroupDetails from '../Pages/GroupDetails';
+import FeaturedGroups from '../Pages/FeaturedGroups';
 
 
 const router = createBrowserRouter([
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
                 element: <ForgetPassword></ForgetPassword>,
             },
         ],
+    },
+    {
+        path: 'featuredGroup',
+        element: <FeaturedGroups></FeaturedGroups>
     },
     {
         path: '/*',
