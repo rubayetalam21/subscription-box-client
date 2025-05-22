@@ -37,7 +37,7 @@ const Navbar = () => {
     return (
         <nav className="bg-base-100 shadow px-4 py-3">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
-                <h2 className="font-bold text-2xl text-primary">HobbyHub</h2>
+                <h2 className="font-bold text-2xl text-teal-500">HobbyHub</h2>
 
                 <div className="lg:flex md:flex items-center gap-6">
                     {/* Nav links */}
