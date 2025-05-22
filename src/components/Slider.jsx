@@ -21,21 +21,28 @@ const Slider = () => {
             >
                 <SwiperSlide>
                     <img
-                        src="https://i.ibb.co.com/0ykPcvjQ/future-tech.jpg"
+                        src="https://i.ibb.co/svBCN4M1/Gaming.jpg"
                         alt="Tech Gadget Box"
                         className="w-full h-[400px] object-cover"
                     />
                 </SwiperSlide>
                 <SwiperSlide>
                     <img
-                        src="https://i.ibb.co.com/RGp8FS92/spectrumot.jpg"
+                        src="https://i.ibb.co/r2mZ9XS5/running.jpg"
                         alt="Organic Beauty Box"
                         className="w-full h-[400px] object-cover"
                     />
                 </SwiperSlide>
                 <SwiperSlide>
                     <img
-                        src="https://i.ibb.co.com/4g5mjXDX/images-1.jpg"
+                        src="https://i.ibb.co/tpf32Dpv/reading.jpg"
+                        alt="Book Lovers Box"
+                        className="w-full h-[400px] object-cover"
+                    />
+                </SwiperSlide>
+                <SwiperSlide>
+                    <img
+                        src="https://i.ibb.co/yFVPyXR2/fishing.jpg"
                         alt="Book Lovers Box"
                         className="w-full h-[400px] object-cover"
                     />
