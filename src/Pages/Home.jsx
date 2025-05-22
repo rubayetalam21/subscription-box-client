@@ -1,4 +1,6 @@
+// Home.jsx
 import React from 'react';
+import { Fade, Slide } from 'react-awesome-reveal';
 import Slider from '../components/Slider';
 import AllGroup from './AllGroup';
 
@@ -6,9 +8,14 @@ const Home = () => {
     return (
         <div>
             <div className='w-11/12 mx-auto py-5'>
-                <Slider />
+                <Fade direction="up" duration={800} triggerOnce>
+                    <Slider />
+                </Fade>
             </div>
-            <AllGroup></AllGroup>
+
+            <Slide direction="up" triggerOnce>
+                <AllGroup />
+            </Slide>
         </div>
     );
 };
