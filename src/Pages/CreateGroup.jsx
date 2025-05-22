@@ -26,7 +26,13 @@ const CreateGroup = () => {
 
         const form = e.target;
         const formData = new FormData(form);
-        const newHobby = Object.fromEntries(formData.entries())
+        const newHobbyData = Object.fromEntries(formData.entries());
+        const newHobby = {
+            ...newHobbyData,
+            userName: user?.displayName || 'Anonymous',
+            userEmail: user?.email || 'Not signed in',
+        };
+    
         console.log(newHobby);
 
         fetch('http://localhost:3000/hobbies', {
@@ -61,12 +67,6 @@ const CreateGroup = () => {
             })
 
         console.log({ ...formData, userName: user?.displayName, userEmail: user?.email });
-
-        // Swal.fire({
-        //     icon: 'success',
-        //     title: 'Group Created',
-        //     text: 'Your group has been successfully created!',
-        // });
 
 
     };
