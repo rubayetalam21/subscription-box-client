@@ -24,7 +24,7 @@ const GroupDetails = () => {
 
     const groupStartDate = new Date(group.startDate);
     const today = new Date();
-    today.setHours(0, 0, 0, 0); // Normalize to midnight
+    today.setHours(0, 0, 0, 0);
 
     const isActive = groupStartDate >= today;
 
