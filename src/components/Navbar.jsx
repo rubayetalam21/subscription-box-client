@@ -1,12 +1,23 @@
-import React, { useContext, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import userImage from "../assets/user.png";
 import Swal from 'sweetalert2';
 import { AuthContext } from '../Provider/AuthProvider';
 
 const Navbar = () => {
-    const { user, logOut } = useContext(AuthContext);
+    const { user, logOut } = React.useContext(AuthContext);
     const [isOpen, setIsOpen] = useState(false);
+    const [theme, setTheme] = useState(localStorage.getItem('theme') || 'light');
+
+    // Apply theme to HTML root
+    useEffect(() => {
+        document.documentElement.setAttribute('data-theme', theme);
+        localStorage.setItem('theme', theme);
+    }, [theme]);
+
+    const toggleTheme = () => {
+        setTheme(prev => (prev === 'light' ? 'dark' : 'light'));
+    };
 
     const handleLogOut = () => {
         logOut()
@@ -17,22 +28,17 @@ const Navbar = () => {
                     text: 'You have been successfully logged out!',
                 });
             })
-            .catch((error) => {
-
-            });
+            .catch((error) => console.error(error));
     };
 
     const navLinkStyle = ({ isActive }) =>
-        isActive
-            ? 'text-teal-500 font-semibold underline'
-            : 'text-gray-700 hover:underline';
+        isActive ? 'text-teal-500 font-semibold underline' : 'text-gray-700 dark:text-gray-200 hover:underline';
 
     return (
-        <nav className="bg-white shadow px-4 py-3">
+        <nav className="bg-base-100 shadow px-4 py-3">
             <div className="max-w-7xl mx-auto flex items-center justify-between">
-                <h2 className="font-bold text-2xl text-teal-500">HobbyHub</h2>
+                <h2 className="font-bold text-2xl text-primary">HobbyHub</h2>
 
-                {/* Desktop nav and auth section */}
                 <div className="lg:flex md:flex items-center gap-6">
                     {/* Nav links */}
                     <div className="flex gap-6">
@@ -40,6 +46,21 @@ const Navbar = () => {
                         <NavLink to="/allGroup" className={navLinkStyle}>All Group</NavLink>
                         <NavLink to="/myGroup" className={navLinkStyle}>My Group</NavLink>
                         <NavLink to="/createGroup" className={navLinkStyle}>Create Group</NavLink>
+                    </div>
+
+                    {/* Theme toggle */}
+                    <div className="form-control">
+                        <label className="label cursor-pointer gap-2">
+                            <span className="text-sm text-gray-600 dark:text-gray-200">
+                                {theme === 'dark' ? 'Dark' : 'Light'} Mode
+                            </span>
+                            <input
+                                type="checkbox"
+                                className="toggle toggle-primary"
+                                onChange={toggleTheme}
+                                checked={theme === 'dark'}
+                            />
+                        </label>
                     </div>
 
                     {/* Auth section */}
@@ -62,23 +83,20 @@ const Navbar = () => {
                                 LogOut
                             </button>
                         ) : (
-                            <Link to="/auth/login" className="btn btn-primary bg-teal-500 text-black px-6">
+                            <Link to="/auth/login" className="btn bg-teal-500 text-black px-6">
                                 Login
                             </Link>
                         )}
                     </div>
                 </div>
 
-                {/* Mobile menu button */}
-                <button
-                    className="md:hidden text-2xl"
-                    onClick={() => setIsOpen(!isOpen)}
-                >
+                {/* Mobile menu toggle */}
+                <button className="md:hidden text-2xl" onClick={() => setIsOpen(!isOpen)}>
                     ☰
                 </button>
             </div>
 
-            {/* Mobile dropdown menu */}
+            {/* Mobile dropdown */}
             {isOpen && (
                 <div className="md:hidden mt-3 space-y-2">
                     <NavLink to="/" className={navLinkStyle}>Home</NavLink>
@@ -86,22 +104,26 @@ const Navbar = () => {
                     <NavLink to="/myGroup" className={navLinkStyle}>My Group</NavLink>
                     <NavLink to="/createGroup" className={navLinkStyle}>Create Group</NavLink>
 
-                    <div className="flex items-center gap-3 mt-4">
-                        <img
-                            className="w-10 h-10 rounded-full border"
-                            src={user?.photoURL || userImage}
-                            alt="User"
+                    {/* Theme toggle for mobile */}
+                    <label className="label cursor-pointer gap-2 px-4">
+                        <span className="text-sm">{theme === 'dark' ? 'Dark' : 'Light'} Mode</span>
+                        <input
+                            type="checkbox"
+                            className="toggle toggle-primary"
+                            onChange={toggleTheme}
+                            checked={theme === 'dark'}
                         />
+                    </label>
+
+                    {/* Mobile Auth Section */}
+                    <div className="flex items-center gap-3 mt-4">
+                        <img className="w-10 h-10 rounded-full border" src={user?.photoURL || userImage} alt="User" />
                         <span>{user?.displayName || "Guest"}</span>
                     </div>
                     {user ? (
-                        <button onClick={handleLogOut} className="btn btn-primary w-full mt-2">
-                            LogOut
-                        </button>
+                        <button onClick={handleLogOut} className="btn btn-primary w-full mt-2">LogOut</button>
                     ) : (
-                        <Link to="/auth/login" className="btn btn-primary w-full mt-2 text-gray-900">
-                            Login
-                        </Link>
+                        <Link to="/auth/login" className="btn btn-primary w-full mt-2 text-gray-900">Login</Link>
                     )}
                 </div>
             )}
