@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { useNavigate } from 'react-router';
+import { Helmet } from 'react-helmet-async';
 
 const MyGroups = () => {
     const { user } = useContext(AuthContext);
@@ -46,6 +47,9 @@ const MyGroups = () => {
 
     return (
         <div className="p-6 max-w-6xl mx-auto">
+            <Helmet>
+                <title>Home | My Group </title>
+            </Helmet>
             <h2 className="text-3xl font-bold mb-6 text-center text-teal-600">My Groups</h2>
             {groups.length === 0 ? (
                 <p className="text-center text-gray-500">You have not created any groups yet.</p>

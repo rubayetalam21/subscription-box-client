@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const CreateGroup = () => {
     const { user } = useContext(AuthContext);
@@ -32,7 +33,7 @@ const CreateGroup = () => {
             userName: user?.displayName || 'Anonymous',
             userEmail: user?.email || 'Not signed in',
         };
-    
+
         console.log(newHobby);
 
         fetch('https://b11a10-server-side-rubayetalam21.vercel.app/hobbies', {
@@ -73,6 +74,9 @@ const CreateGroup = () => {
 
     return (
         <div className="max-w-3xl mx-auto p-6 bg-white shadow rounded-xl mt-10">
+            <Helmet>
+                <title>Home | Create Group </title>
+            </Helmet>
             <h2 className="text-2xl font-bold text-center mb-6 text-teal-600">Create New Group</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div>

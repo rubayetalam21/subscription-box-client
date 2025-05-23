@@ -3,6 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
     const { createUser, setUser, updateUser } = useContext(AuthContext);
@@ -64,6 +65,9 @@ const Register = () => {
 
     return (
         <div className="flex justify-center min-h-screen items-center">
+            <Helmet>
+                <title>Home | Register </title>
+            </Helmet>
             <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl py-5">
                 <h2 className="font-semibold text-2xl text-center">Register your account</h2>
                 <form onSubmit={handleRegister} className="card-body">

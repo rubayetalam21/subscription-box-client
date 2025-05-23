@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router';
 import { Tooltip } from 'react-tooltip';
 import 'react-tooltip/dist/react-tooltip.css'
@@ -28,6 +29,9 @@ const AllGroup = () => {
 
     return (
         <div className="max-w-6xl mx-auto px-4 py-10">
+            <Helmet>
+                <title>Home | All Group </title>
+            </Helmet>
             <h2 className="text-3xl font-bold text-center text-teal-600 mb-8">All Hobby Groups</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {groups.map(group => (

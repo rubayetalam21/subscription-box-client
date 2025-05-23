@@ -3,6 +3,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../Provider/AuthProvider';
 import Swal from 'sweetalert2';
 import { useLoaderData } from 'react-router';
+import { Helmet } from 'react-helmet-async';
 
 const UpdateGroup = () => {
     const { user } = useContext(AuthContext);
@@ -91,6 +92,9 @@ const UpdateGroup = () => {
 
     return (
         <div className="max-w-3xl mx-auto p-6 bg-white shadow rounded-xl mt-10">
+            <Helmet>
+                <title>Home | Update Group </title>
+            </Helmet>
             <h2 className="text-2xl font-bold text-center mb-6 text-teal-600">Update Group</h2>
             <form onSubmit={handleSubmit} className="space-y-4">
                 <div>
