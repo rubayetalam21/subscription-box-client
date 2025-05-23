@@ -71,13 +71,15 @@ const MyGroups = () => {
                                     <td>{group.startDate}</td>
                                     <td>{group.maxMembers}</td>
                                     <td>
-                                        <button className="btn btn-xs btn-warning mr-2" onClick={() => navigate(`/updateGroup/${group._id}`)} >Update</button>
-                                        <button
-                                            className="btn btn-xs btn-error"
-                                            onClick={() => handleDelete(group._id)}
-                                        >
-                                            Delete
-                                        </button>
+                                        <div className='flex gap-3'>
+                                            <button className="btn btn-xs btn-warning" onClick={() => navigate(`/updateGroup/${group._id}`)} >Update</button>
+                                            <button
+                                                className="btn btn-xs btn-error"
+                                                onClick={() => handleDelete(group._id)}
+                                            >
+                                                Delete
+                                            </button>
+                                        </div>
                                     </td>
                                 </tr>
                             ))}

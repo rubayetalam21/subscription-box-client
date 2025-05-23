@@ -27,7 +27,11 @@ const Login = () => {
                 navigate(location.state || "/");
             })
             .catch((error) => {
-                setError(error.code);
+                Swal.fire({
+                    icon: "error",
+                    title: "Oops...",
+                    text: 'Enter the proper credentials',
+                });
             });
     };
 

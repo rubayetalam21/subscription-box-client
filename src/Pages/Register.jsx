@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Register = () => {
     const { createUser, setUser, updateUser } = useContext(AuthContext);
@@ -45,6 +46,11 @@ const Register = () => {
                 updateUser({ displayName: name, photoURL: photo })
                     .then(() => {
                         setUser({ ...user, displayName: name, photoURL: photo });
+                        Swal.fire({
+                            icon: 'success',
+                            title: 'Registration',
+                            text: 'You have been successfully registered!',
+                        });
                         navigate("/");
                     })
                     .catch((error) => {

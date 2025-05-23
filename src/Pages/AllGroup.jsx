@@ -31,10 +31,10 @@ const AllGroup = () => {
             <h2 className="text-3xl font-bold text-center text-teal-600 mb-8">All Hobby Groups</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                 {groups.map(group => (
-                    <div key={group._id} className="bg-white rounded-xl p-5">
+                    <div key={group._id} className="bg-white shadow rounded-xl p-5">
                         <div
                             key={group._id}
-                            className="bg-white rounded-xl shadow p-5"
+                            className="bg-white rounded-xl p-5"
                             data-tooltip-id="group-tooltip"
                             data-tooltip-content={`Members: ${group.maxMembers || 0}, Meeting: ${group.startDate || 'TBA'}`}
                         >
@@ -54,11 +54,13 @@ const AllGroup = () => {
                                 <p>Email: {group.userEmail}</p>
                             </div>
 
-                            <Link to={`/groupDetails/${group._id}`} className="mt-auto">
-                                <button className="btn bg-teal-500 text-white w-full mt-4">
-                                    See More
-                                </button>
-                            </Link>
+                            <div className='mt-5'>
+                                <Link to={`/groupDetails/${group._id}`} className="mt-auto">
+                                    <button className="btn bg-teal-500 text-white w-full mt-4">
+                                        See More
+                                    </button>
+                                </Link>
+                            </div>
                             <Tooltip id="group-tooltip" place="top" effect="solid" />
 
                         </div>
