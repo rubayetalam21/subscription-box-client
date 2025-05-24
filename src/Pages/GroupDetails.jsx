@@ -16,7 +16,6 @@ const GroupDetails = () => {
     }, [id]);
 
     const handleJoinGroup = () => {
-        // You can later improve this with checks or backend calls
         Swal.fire('Joined', 'You have successfully joined the group!', 'success');
     };
 

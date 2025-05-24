@@ -39,7 +39,8 @@ const Navbar = () => {
             <div className="max-w-7xl mx-auto flex items-center justify-between">
                 <h2 className="font-bold text-2xl text-teal-500">HobbyHub</h2>
 
-                <div className="lg:flex md:flex items-center gap-6">
+                {/* Desktop nav - hidden on small screens */}
+                <div className="hidden md:flex items-center gap-6">
                     {/* Nav links */}
                     <div className="flex gap-6">
                         <NavLink to="/" className={navLinkStyle}>Home</NavLink>
@@ -79,26 +80,22 @@ const Navbar = () => {
                         </div>
 
                         {user ? (
-                            <button onClick={handleLogOut} className="btn bg-teal-500 text-white px-6">
-                                LogOut
-                            </button>
+                            <button onClick={handleLogOut} className="btn bg-teal-500 text-white px-6">LogOut</button>
                         ) : (
-                            <Link to="/auth/login" className="btn bg-teal-500 text-black px-6">
-                                Login
-                            </Link>
+                            <Link to="/auth/login" className="btn bg-teal-500 text-black px-6">Login</Link>
                         )}
                     </div>
                 </div>
 
-                {/* Mobile menu toggle */}
+                {/* Mobile menu toggle button - hidden on medium and up */}
                 <button className="md:hidden text-2xl" onClick={() => setIsOpen(!isOpen)}>
                     ☰
                 </button>
             </div>
 
-            {/* Mobile dropdown */}
+            {/* Mobile dropdown menu - only visible on small screens */}
             {isOpen && (
-                <div className="md:hidden mt-3 space-y-2">
+                <div className="md:hidden mt-3 space-y-2 flex flex-col">
                     <NavLink to="/" className={navLinkStyle}>Home</NavLink>
                     <NavLink to="/allGroup" className={navLinkStyle}>All Group</NavLink>
                     <NavLink to="/myGroup" className={navLinkStyle}>My Group</NavLink>
@@ -116,7 +113,7 @@ const Navbar = () => {
                     </label>
 
                     {/* Mobile Auth Section */}
-                    <div className="flex items-center gap-3 mt-4">
+                    <div className="flex items-center gap-3 mt-4 px-4">
                         <img className="w-10 h-10 rounded-full border" src={user?.photoURL || userImage} alt="User" />
                         <span>{user?.displayName || "Guest"}</span>
                     </div>
@@ -128,6 +125,7 @@ const Navbar = () => {
                 </div>
             )}
         </nav>
+
     );
 };
 

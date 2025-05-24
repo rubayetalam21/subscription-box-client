@@ -47,7 +47,7 @@ const Slider = () => {
                         className="w-full h-[400px] object-cover"
                     />
                 </SwiperSlide>
-                {/* Add more SwiperSlide components as needed */}
+               
             </Swiper>
         </div>
     );

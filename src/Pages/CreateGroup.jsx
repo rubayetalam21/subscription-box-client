@@ -170,7 +170,7 @@ const CreateGroup = () => {
                         type="text"
                         value={user?.displayName || 'Anonymous'}
                         readOnly
-                        className="input input-bordered w-full bg-gray-100"
+                        className="input input-bordered w-full bg-gray-100 text-black"
                     />
                 </div>
 
@@ -179,7 +179,7 @@ const CreateGroup = () => {
                         type="email"
                         value={user?.email || 'Not signed in'}
                         readOnly
-                        className="input input-bordered w-full bg-gray-100"
+                        className="input input-bordered w-full bg-gray-100 text-black"
                     />
                 </div>
 

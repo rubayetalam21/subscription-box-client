@@ -28,13 +28,13 @@ const ForgetPassword = () => {
         }
 
         try {
-            await resetPassword(email); // Call Firebase password reset
+            await resetPassword(email);
             Swal.fire({
                 icon: 'success',
                 title: 'Reset Email Sent',
                 text: 'Please check your email for the reset link.',
             });
-            // Optional: Redirect to Gmail
+           
             setTimeout(() => {
                 window.location.href = 'https://mail.google.com';
             }, 2000);

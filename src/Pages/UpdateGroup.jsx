@@ -19,17 +19,6 @@ const UpdateGroup = () => {
         imageUrl: '',
     });
 
-    // const {_id, title, category, description, location, maxMembers, startDate, imageUrl} = useLoaderData();
-
-    // console.log(title);
-    // // Load existing group data
-    // useEffect(() => {
-    //     fetch(`https://b11a10-server-side-rubayetalam21.vercel.app/hobbies/${id}`)
-    //         .then(res => res.json())
-    //         .then(data => setFormData(data))
-    //         .catch(err => console.error('Failed to fetch group data:', err));
-    // }, [id]);
-
 
     useEffect(() => {
         fetch(`https://b11a10-server-side-rubayetalam21.vercel.app/hobbies/user/${id}`)
@@ -189,7 +178,7 @@ const UpdateGroup = () => {
                         type="text"
                         value={user?.displayName || 'Anonymous'}
                         readOnly
-                        className="input input-bordered w-full bg-gray-100"
+                        className="input input-bordered w-full bg-gray-100 text-black"
                     />
                 </div>
 
@@ -198,7 +187,7 @@ const UpdateGroup = () => {
                         type="email"
                         value={user?.email || 'Not signed in'}
                         readOnly
-                        className="input input-bordered w-full bg-gray-100"
+                        className="input input-bordered w-full bg-gray-100 text-black"
                     />
                 </div>
 

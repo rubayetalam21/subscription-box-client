@@ -9,7 +9,7 @@ const MyGroups = () => {
     const [groups, setGroups] = useState([]);
     const navigate = useNavigate();
 
-    // Load user's groups
+    
     useEffect(() => {
         if (user?.email) {
             fetch(`https://b11a10-server-side-rubayetalam21.vercel.app/hobbies/${user.email}`)
@@ -19,7 +19,7 @@ const MyGroups = () => {
         }
     }, [user]);
 
-    // Delete handler
+    
     const handleDelete = (id) => {
         Swal.fire({
             title: 'Are you sure?',
