@@ -100,6 +100,8 @@ const CreateGroup = () => {
                     >
                         <option value="">Select Category</option>
                         <option value="Gaming">Gaming</option>
+                        <option value="Gaming">Photography</option>
+                        <option value="Gaming">Drawing & Painting</option>
                         <option value="Fishing">Fishing</option>
                         <option value="Running">Running</option>
                         <option value="Cooking">Cooking</option>
