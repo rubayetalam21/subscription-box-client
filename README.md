@@ -55,5 +55,5 @@ It connects to a RESTful API hosted on Vercel.
 
 1. Clone the repo:  
    ```bash
-   git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
+   git clone https://github.com/rubayetalam21/subscription-box-client
    cd YOUR_REPO_NAME
